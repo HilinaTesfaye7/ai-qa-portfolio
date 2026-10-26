@@ -1,0 +1,68 @@
+[
+  {
+    "case_id": "GS-001",
+    "fields": {
+      "revenue": 1200000,
+      "net_income": 186000,
+      "fiscal_year": 2025,
+      "auditor": "Clarke & Ward LLP",
+      "signed": true
+    },
+    "summary": "Northwind Clinics reported revenue of 1,200,000 and net income of 186,000 for 2025, audited by Clarke & Ward LLP."
+  },
+  {
+    "case_id": "GS-002",
+    "fields": {
+      "revenue": 845000,
+      "net_income": 92500,
+      "fiscal_year": 2025,
+      "auditor": null,
+      "signed": true
+    },
+    "summary": "Blue Harbor Dental had revenue of 845,000 and net income of 92,500 in 2025, based on unaudited management accounts."
+  },
+  {
+    "case_id": "GS-003",
+    "fields": {
+      "revenue": 2310000,
+      "net_income": 301000,
+      "fiscal_year": 2025,
+      "auditor": null,
+      "signed": true
+    },
+    "summary": "Summit Physio Group reported revenue of 2,310,000 and net income of 301,000 for 2025."
+  },
+  {
+    "case_id": "GS-004",
+    "fields": {
+      "revenue": 3050000,
+      "net_income": 410000,
+      "fiscal_year": 2024,
+      "auditor": "Clarke & Ward LLP",
+      "signed": false
+    },
+    "summary": "Lakeside Imaging reported revenue of 3,050,000 and net income of 410,000 for 2024. The statement is not signed."
+  },
+  {
+    "case_id": "GS-005",
+    "fields": {
+      "revenue": 640000,
+      "net_income": -58000,
+      "fiscal_year": 2025,
+      "auditor": null,
+      "signed": true
+    },
+    "summary": "Cedar Home Health had revenue of 640,000 and a net loss of 58,000 in 2025; no audit was performed."
+  },
+  {
+    "case_id": "GS-006",
+    "fields": {
+      "revenue": null,
+      "net_income": 77000,
+      "fiscal_year": 2025,
+      "auditor": "Meridian Assurance",
+      "signed": true
+    },
+    "summary": "Pine Ridge Pharmacy reported net income of 77,000 for 2025. Revenue was not provided."
+  }
+]

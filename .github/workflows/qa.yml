@@ -1,0 +1,38 @@
+name: QA checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
+
+      - name: API, SQL data and AI evaluation tests
+        run: pytest -m "not ui" --junitxml=reports/unit.xml
+
+      - name: Playwright UI tests
+        run: pytest -m ui --junitxml=reports/ui.xml
+
+      - name: AI release gate (blocks prompt changes that regress)
+        run: python -m evals.run_eval --candidate data/outputs_prompt_v1.json
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-reports
+          path: |
+            reports/
+            eval_report.json

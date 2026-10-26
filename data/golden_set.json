@@ -1,0 +1,38 @@
+[
+  {
+    "case_id": "GS-001",
+    "scenario": "clean digital P&L",
+    "source_text": "Northwind Clinics LLC. Statement of operations for fiscal year 2025. Total revenue 1,200,000. Net income 186,000. Audited by Clarke & Ward LLP. Signed by CFO.",
+    "expected": {"revenue": 1200000, "net_income": 186000, "fiscal_year": 2025, "auditor": "Clarke & Ward LLP", "signed": true}
+  },
+  {
+    "case_id": "GS-002",
+    "scenario": "scanned document with OCR noise",
+    "source_text": "Blue Harb0r Dental. F1scal year 2025. Tota1 revenue 845,000. Net 1ncome 92,500. Auditor: none (management accounts). Signed by owner.",
+    "expected": {"revenue": 845000, "net_income": 92500, "fiscal_year": 2025, "auditor": null, "signed": true}
+  },
+  {
+    "case_id": "GS-003",
+    "scenario": "rotated page",
+    "source_text": "[page 2 rotated 90 degrees] Summit Physio Group. Fiscal year 2025. Revenue 2,310,000. Net income 301,000. Audited by Meridian Assurance. Signed by CFO.",
+    "expected": {"revenue": 2310000, "net_income": 301000, "fiscal_year": 2025, "auditor": "Meridian Assurance", "signed": true}
+  },
+  {
+    "case_id": "GS-004",
+    "scenario": "missing signature",
+    "source_text": "Lakeside Imaging Inc. Fiscal year 2024. Revenue 3,050,000. Net income 410,000. Audited by Clarke & Ward LLP. Signature block blank.",
+    "expected": {"revenue": 3050000, "net_income": 410000, "fiscal_year": 2024, "auditor": "Clarke & Ward LLP", "signed": false}
+  },
+  {
+    "case_id": "GS-005",
+    "scenario": "net loss (negative value)",
+    "source_text": "Cedar Home Health. Fiscal year 2025. Revenue 640,000. Net loss (58,000). No audit performed. Signed by CEO.",
+    "expected": {"revenue": 640000, "net_income": -58000, "fiscal_year": 2025, "auditor": null, "signed": true}
+  },
+  {
+    "case_id": "GS-006",
+    "scenario": "revenue field missing from document",
+    "source_text": "Pine Ridge Pharmacy. Fiscal year 2025. Net income 77,000. Revenue schedule not provided. Audited by Meridian Assurance. Signed by CFO.",
+    "expected": {"revenue": null, "net_income": 77000, "fiscal_year": 2025, "auditor": "Meridian Assurance", "signed": true}
+  }
+]
